@@ -10,7 +10,7 @@
     <form method="POST" action="/login" class="w-full max-w-sm bg-white p-6 rounded-lg shadow space-y-4">
         @csrf
         <h1 class="text-xl font-bold">Login</h1>
-
+    
         <div>
             <label class="block text-sm mb-1">Email</label>
             <input type="email" name="email" value="{{ old('email') }}"
