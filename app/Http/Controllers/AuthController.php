@@ -26,6 +26,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
+            $request->session()->regenerate();
             $tujuan = Auth::user()->isOwner() ? '/dashboard' : '/orders';
             return redirect()->intended($tujuan);   
         }

@@ -6,8 +6,8 @@
     <title>Login</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gray-100">
-    <form method="POST" action="/login" class="w-full max-w-sm bg-white p-6 rounded-lg shadow space-y-4">
+<body class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <form method="POST" action="/{{ route('login') }}" class="w-full max-w-sm bg-white p-6 rounded-lg shadow space-y-4">
         @csrf
         <h1 class="text-xl font-bold">Login</h1>
     
@@ -28,6 +28,10 @@
             @enderror
         </div>
 
+        <label class="flex items-center gap-2 text-sm">
+            <input type="checkbox" name="remember" value="1"> Ingat saya
+        </label>
+        
         <button class="w-full bg-blue-600 text-white py-2 rounded">Masuk</button>
     </form>
 </body>
